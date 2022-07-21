@@ -37,7 +37,7 @@ export default function Dashboard() {
     }, [actorOffset]);
 
     const getActors = (offset) => {
-        get(`actors?limit=${actorLimit}&offset=${offset}`).then(data => {
+        get(`actors/${actorLimit}/${offset}`).then(data => {
             const actors = data['actors'];
             const actorCount = data['actorCount'];
             dispatch(appendActors(actors));
