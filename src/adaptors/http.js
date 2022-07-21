@@ -1,4 +1,4 @@
-const HOST = 'http://actormovie-env.eba-8xjhgsjb.us-east-2.elasticbeanstalk.com';
+const HOST = 'https://d2icr8q4nhruqs.cloudfront.net';
 
 const get = async (path = '', headers = {}) => {
     try {
