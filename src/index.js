@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
+import store from './app/store'
+import { Provider } from 'react-redux';
+import CreateActor from "./components/CreateActor";
+import CreateMovie from "./components/CreateMovie";
+import ActorDetails from "./components/ActorDetails";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+      <Provider store={store}>
+          <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<App />} />
+                  <Route path="actor" element={<ActorDetails/>} />
+                  <Route path="add-actor" element={<CreateActor />} />
+                  <Route path="add-movie" element={<CreateMovie />} />
+              </Routes>
+          </BrowserRouter>
+      </Provider>
   </React.StrictMode>
 );
 
